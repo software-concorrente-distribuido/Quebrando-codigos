@@ -91,6 +91,70 @@ O método **Monitor.Pulse** é usado para notificar a outra thread quando uma co
 
 ![Execução](https://github.com/MateusSilvaUFG/UFG-ES/blob/main/execução.jpg)
 
+Algoritmo de Dekker:
+
+```csharp
+using System;
+using System.Threading;
+
+public class DekkerMutex
+{
+    private bool[] flag = new bool[2];
+    private int turn;
+
+    public void Lock(int threadId)
+    {
+        int otherThread = 1 - threadId;
+        flag[threadId] = true;
+        while (flag[otherThread])
+        {
+            if (turn == otherThread)
+            {
+                flag[threadId] = false;
+                while (turn == otherThread) ;
+                flag[threadId] = true;
+            }
+        }
+    }
+
+    public void Unlock(int threadId)
+    {
+        flag[threadId] = false;
+        turn = 1 - threadId;
+    }
+}
+
+public class Program
+{
+    static DekkerMutex mutex = new DekkerMutex();
+    static int sharedResource = 0;
+
+    static void Main(string[] args)
+    {
+        Thread t1 = new Thread(IncrementSharedResource);
+        Thread t2 = new Thread(IncrementSharedResource);
+
+        t1.Start(0);
+        t2.Start(1);
+
+        t1.Join();
+        t2.Join();
+
+        Console.WriteLine("Valor final da variável compartilhada: " + sharedResource);
+    }
+
+    static void IncrementSharedResource(object id)
+    {
+        int threadId = (int)id;
+        for (int i = 0; i < 1000; i++)
+        {
+            mutex.Lock(threadId);
+            sharedResource++;
+            mutex.Unlock(threadId);
+        }
+    }
+}
+```
 
 ### Possíveis erros sem o uso de Sleep e Wakeup:
 

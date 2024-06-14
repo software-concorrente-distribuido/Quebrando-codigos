@@ -5,7 +5,7 @@ const Header = () => {
   return (
     <Wrapper>
       <Container>
-        <Title>AvastFlix</Title>
+        <Title>SkillForge</Title>
         <SearchBar>
           <input />
           <SearchButton>

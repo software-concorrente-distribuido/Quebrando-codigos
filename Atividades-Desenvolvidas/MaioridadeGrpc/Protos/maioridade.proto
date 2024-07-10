@@ -1,0 +1,22 @@
+syntax = "proto3";
+
+option csharp_namespace = "MaioridadeGrpc";
+
+package maioridade;
+
+// Definição do serviço
+service MaioridadeService {
+  rpc VerificarMaioridade (MaioridadeRequest) returns (MaioridadeResponse);
+}
+
+// Mensagem de requisição
+message MaioridadeRequest {
+  string nome = 1;
+  string sexo = 2;
+  int32 idade = 3;
+}
+
+// Mensagem de resposta
+message MaioridadeResponse {
+  string resultado = 1;
+}

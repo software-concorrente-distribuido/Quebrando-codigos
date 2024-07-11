@@ -68,7 +68,7 @@ export const Icon = styled.div`
   justify-content: center;
 
   background: #264e70;
-
+  z-index: 200;
   opacity: 0;
   transition: 0.1s linear;
   position: absolute;

@@ -26,7 +26,7 @@ const SwiperComponent = ({
       >
         {slides?.map((slide, index) => (
           <SwiperSlide key={slide.url || slide.name || index}>
-            <Slide url={slide.url} name={slide.name} />
+            <Slide url={slide.url} name={slide.name} videoId={slide.videoId}/>
           </SwiperSlide>
         ))}
       </Swiper>

@@ -1,7 +1,6 @@
 import { Bullet, Container } from "./styles";
 
 const Pagination = ({ total, active, slideTo }) => {
-  console.log(slideTo);
   return (
     <Container>
       {Array.from({ length: total }).map((_, index) => (

@@ -6,7 +6,6 @@ const Slide = ({ url, name, videoId }) => {
   const navigate = useNavigate();
 
   const handlePlayClick = () => {
-    console.log("teste clique");
     navigate(`/player/${videoId}`);
   };
   return (

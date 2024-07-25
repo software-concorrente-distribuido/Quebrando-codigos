@@ -6,7 +6,6 @@ const NavigationSwiper = ({
   handleClickPrev,
   controlledSwiper,
 }) => {
-  console.log(controlledSwiper);
 
   return (
     <Container>

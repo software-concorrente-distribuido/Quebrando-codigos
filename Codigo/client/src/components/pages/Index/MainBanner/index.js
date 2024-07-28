@@ -14,13 +14,7 @@ const MainBanner = () => {
       <img src="https://a.espncdn.com/photo/2022/0303/r981587_1296x729_16-9.jpg" />
       <Filter />
       <Description>
-        <StreamName>Ayel</StreamName>
-        <SubTitle>
-          Assista agora{" "}
-          <PlayButton>
-            <FaPlay />
-          </PlayButton>
-        </SubTitle>
+        <StreamName>Forje suas habilidades</StreamName>
       </Description>
     </Container>
   );

@@ -19,33 +19,30 @@ app.get('/video/:id', async (req: Request, res: Response) => {
       res.status(400).send("Requires Range header");
       return;
     }
-
-    const positions = range.replace(/bytes=/, "").split("-");
-    const start = parseInt(positions[0], 10);
-    const end = positions[1] ? parseInt(positions[1], 10) : start + (1024 * 1024) - 1; // Default to 1 MB if no end
+    const CHUNK_SIZE = 1048576 // 1MB
+    const parts = range.replace(/bytes=/, "").split("-");
+    const start = parseInt(parts[0], 10);
+    const end = Math.min(start + CHUNK_SIZE - 1, Infinity);
+    
 
     const videoId = req.params.id;
     const cloudFrontUrlWithRange = `${videoUrl}/${videoId}`;
 
-    // Fetch the requested range from CloudFront
     const options = {
       headers: {
         'Range': `bytes=${start}-${end}`
       }
     };
-
+    
     const videoStream = await fetch(cloudFrontUrlWithRange, options);
-
     if (videoStream.status !== 206) {
       res.status(videoStream.status).send("Error fetching video");
       return;
     }
 
-    // Retrieve headers and handle potential null values
     const contentRange = videoStream.headers.get('Content-Range') || `bytes ${start}-${end}/*`;
     const contentLength = videoStream.headers.get('Content-Length') || `${end - start + 1}`;
 
-    // Set the response headers
     res.writeHead(206, {
       'Content-Range': contentRange,
       'Accept-Ranges': 'bytes',
@@ -53,7 +50,6 @@ app.get('/video/:id', async (req: Request, res: Response) => {
       'Content-Type': 'video/mp4',
     });
 
-    // Pipe the video stream to the response
     if (videoStream.body) {
       videoStream.body.pipe(res);
     } else {

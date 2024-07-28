@@ -8,35 +8,35 @@ const Recommended = () => {
 
   const slides = [
     {
-      url: "https://cdn.espn.com.br/image/wide/622_9b3c5196-7c70-3710-8c49-a4dc02240eb8.jpg",
-      name: "Ayel",
+      url: "https://s2-ge.glbimg.com/AS55dnMaIRzB1i6YyufK_reh3u8=/0x0:1920x1280/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2022/W/y/I7bZIpSQOtKDaQpn4dKg/titan-lol-red-canids-cblol-2022.jpg",
+      name: "Kiting",
       videoId: "titankite.mp4"
     },
     {
-      url: "https://s2-techtudo.glbimg.com/shiEpZQz8jWbIGbBGqTNZRryRY8=/0x0:1920x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/p/y/CjAvzAQB6C97BCbU887g/foto1.png",
-      name: "4Lan",
-      videoId: "2"
+      url: "https://sm.ign.com/ign_br/screenshot/default/53345941569-bbb2582a6d-b_469r.jpg",
+      name: "Controle de visão",
+      videoId: "visao-lol.mp4"
     },
     {
-      url: "https://s2.glbimg.com/08BOcmlXBvZyvumMOEKiln1apZc=/0x0:1600x1067/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2019/s/k/BKTFEaTLCG6OweJgC2Rg/yoda3.jpg",
-      name: "YoDa",
-      videoId: "3"
+      url: "https://noticias.maisesports.com.br/wp-content/uploads/2022/04/Guigo-RED-Canids-CBLOL-2022-Semfinal.jpg",
+      name: "Top Lane",
+      videoId: "fase-de-rotas.mp4"
     },
     {
-      url: "https://noticias.maisesports.com.br/wp-content/uploads/2022/05/ranger-cblol-2022-lol.jpg",
-      name: "Ranger",
-      videoId: "4"
+      url: "https://s2-ge.glbimg.com/rlNxDiUoogDE_EAHZ5bpEjk3MG8=/1200x/smart/filters:cover():strip_icc()/s.glbimg.com/es/ge/f/original/2019/02/06/revolta2.jpg",
+      name: "Jungle",
+      videoId: "jungle.mp4"
     },
     {
-      url: "https://a.espncdn.com/photo/2023/0703/r1193572_1296x729_16-9.jpg",
-      name: "Baiano",
-      videoId: "5"
+      url: "https://pbs.twimg.com/profile_images/773415262758531072/W3xIMrrJ_400x400.jpg",
+      name: "Macro Game",
+      videoId: "macrogame.mp4"
     },
   ];
 
   return (
     <Container>
-      <SectionTitle title="Recomendados" {...swiperProps} />
+      <SectionTitle title="LEAGUE OF LEGENDS" {...swiperProps} />
       <SwiperComponent {...swiperProps} slides={slides} />
     </Container>
   );

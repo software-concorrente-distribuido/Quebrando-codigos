@@ -8,30 +8,31 @@ const MostWatched = () => {
 
   const slides = [
     {
-      url: "https://cdn.espn.com.br/image/wide/622_9b3c5196-7c70-3710-8c49-a4dc02240eb8.jpg",
-      name: "Ayel",
+      url: "https://cmsassets.rgpub.io/sanity/images/dsfx7636/news_live/7938409f67b30b0e64830fe21f6a2253418283ec-1920x1080.jpg",
+      name: "Guia Fade",
+      videoId: "faze.mp4"
     },
     {
-      url: "https://s2-techtudo.glbimg.com/shiEpZQz8jWbIGbBGqTNZRryRY8=/0x0:1920x1080/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_08fbf48bc0524877943fe86e43087e7a/internal_photos/bs/2019/p/y/CjAvzAQB6C97BCbU887g/foto1.png",
-      name: "4Lan",
+      url: "https://www.esports.net/wp-content/uploads/2023/07/faze-clan-valorant-e1690260375615.jpg",
+      name: "Controle de mira",
+      videoId: "mira.mp4"
     },
     {
-      url: "https://s2.glbimg.com/08BOcmlXBvZyvumMOEKiln1apZc=/0x0:1600x1067/984x0/smart/filters:strip_icc()/i.s3.glbimg.com/v1/AUTH_bc8228b6673f488aa253bbcb03c80ec5/internal_photos/bs/2019/s/k/BKTFEaTLCG6OweJgC2Rg/yoda3.jpg",
-      name: "YoDa",
+      url: "https://editors.dexerto.com/wp-content/uploads/2023/04/11/Sentinels-pancada-VCT-Americas.jpg",
+      name: "Pancada",
+      videoId: "pancada.mp4"
     },
     {
-      url: "https://noticias.maisesports.com.br/wp-content/uploads/2022/05/ranger-cblol-2022-lol.jpg",
-      name: "Ranger",
+      url: "https://i.ytimg.com/vi/Xslh6-cQdjw/maxresdefault.jpg",
+      name: "Sheriff",
+      videoId: "sheriff.mp4"
     },
-    {
-      url: "https://a.espncdn.com/photo/2023/0703/r1193572_1296x729_16-9.jpg",
-      name: "Baiano",
-    },
+   
   ];
 
   return (
     <Container>
-      <SectionTitle title="Mais assistidos" {...swiperProps} />
+      <SectionTitle title="VALORANT" {...swiperProps} />
       <SwiperComponent {...swiperProps} slides={slides} />
     </Container>
   );

@@ -10,4 +10,3 @@ Membros do grupo:
 
 
 [SkillForge](https://docs.google.com/presentation/d/136Fo6UfJjaylP_bDMxRxtJO3WRZnzNbAEP-RzHHleeI/edit#slide=id.p1)
-teste
